@@ -1,0 +1,141 @@
+$parallax-height: 120vh;
+$center-margin: 0px auto;
+
+@mixin background-size($size){
+    -webkit-background-size: $size;
+    -moz-background-size: $size;
+    -o-background-size: $size;
+    background-size: $size;
+}
+
+@mixin parallax-background($file) {
+    background: url($file) no-repeat center center fixed;
+    @include background-size(cover);
+  }
+@mixin grid-background($file)  {
+    background: url($file) no-repeat center;
+    @include background-size(cover);
+}
+
+  html,
+body {
+  margin: 0;
+  padding: 0;
+  color: #2e3738;
+}
+
+img{
+    max-width: 100%;
+}
+.pic {
+    height: $parallax-height;
+    width: 100%;
+    perspective: 1px;
+    transform: translateZ(-1px);
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    @include parallax-background("https://img.cinemablend.com/filter:scale/quill/5/3/a/e/9/d/53ae9dfec3c10ec0d0e5fb88760bd59a5b5c4f95.jpg?mw=600");
+    h1{
+        font-family: "Shadows Into Light", Arial, Helvetica, sans-serif;
+        font-size: 150px;
+        color: white;
+        opacity: 0.4;
+        text-align: center;
+
+
+    }
+}
+
+.container{
+    height: $parallax-height;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 3fr,3fr,1fr,1fr;
+    grid-gap: 25px;
+    .boxA{
+        grid-area: 1/1/span 1/ span 1;
+        @include grid-background("https://www.onrpg.com/wp-content/uploads/2017/07/Albion-Online-Launch.jpg") ;
+        h1{
+            margin: $center-margin;
+        }
+    }
+    .boxB{
+        grid-area:1/2/span 1/span 1;
+        @include grid-background("https://cdn.wccftech.com/wp-content/uploads/2017/12/pubg-xbox-one-update-2.jpg");
+        h1{
+            margin: $center-margin;
+        }
+    }
+    .boxC{
+        grid-area:1/3/span 1/span 1;
+        @include grid-background("http://img.wennermedia.com/social/world_of_warcraft_legion_key_art-6d7416bd-f7dc-4170-a7dd-d84facf116b7.jpg");
+        h1{
+            margin: $center-margin;
+        }
+    }
+    .boxD{
+        grid-area:2/1/span 1/span 1;
+        @include grid-background("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Darkfall_wallpaper_2009.jpg/1200px-Darkfall_wallpaper_2009.jpg");
+        h1{
+            margin: $center-margin;
+        }
+    }
+    .boxE{
+        grid-area:2/2/span 1/span 1;
+        @include grid-background("https://cdn3.dualshockers.com/wp-content/uploads/2015/04/heroes_of_the_storm_wall_paper.jpg");
+        h1{
+            margin: $center-margin;
+        }
+    }
+    .boxF{
+        grid-area: 2/3/span 1/span 1;
+        @include grid-background("https://cdn2.unrealengine.com/Fortnite%2Fbattle-royale%2Ffortnite-sniper-1920x1080-f072fcef414cbe680e369a16a8d059d8a01c7636.jpg");
+        h1{
+            margin: $center-margin;
+        }
+    }
+    .boxG{
+        grid-area: 3/1/span 1/ span 1;
+        @include grid-background("https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA5NS84NjIvb3JpZ2luYWwvbWFuLWNyeWluZy10ZWFycy5qcGc=");
+        h1{
+            margin: $center-margin;
+        }
+    }
+    .boxH{
+        grid-area: 3/2/span 1/span 1;
+        @include grid-background("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCHiE5kTELcYlyayptpEatLd_idbcyHYMs4v99GuBMg_33CjidYw");
+        h1{
+            margin: $center-margin;
+        }
+    }
+    .boxI{
+        grid-area: 3/3/span 1/span 1;
+        @include grid-background("http://streamersquare.com/wp-content/uploads/2016/03/Discord-Feature-Graphic.png");
+        h1{
+            margin: $center-margin;
+        }
+    }
+    .boxJ{
+        grid-area: 4/1/span 1/span 1;
+        @include grid-background("https://i.ytimg.com/vi/coMhteW-sLU/maxresdefault.jpg");
+        h1{
+            margin: $center-margin;
+        }
+    }
+    .boxK{
+        grid-area: 4/2/span 1/span 1;
+        @include grid-background("http://images3.cinema.de/imedia/1915/1871915,vADbWDL43NRAF3Y53Z1Pp1Z76LkGhMHep_p_6W7601FwpWgi6UYEvgJgPeOS3+TzP7qqwCcLyODdR79920XjOw==.jpg");
+        h1{
+            margin:$center-margin;
+        }
+    }
+    .boxL{
+        grid-area:4/3/span 1/ span 1;
+        background-color: red;
+        h1{
+            margin:$center-margin
+        }
+    }
+}
