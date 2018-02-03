@@ -34,7 +34,7 @@ h1{
 }
 
 .container {
-  height: 900px;
+  height: 850px;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
