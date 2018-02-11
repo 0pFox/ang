@@ -24,9 +24,10 @@ body {
   color: #2e3738;
 }
 
-img{
-    max-width: 100%;
-}
+
+
+    
+
 .pic {
     height: $parallax-height;
     width: 100%;
@@ -34,26 +35,42 @@ img{
     transform: translateZ(-1px);
     overflow-x: hidden;
     overflow-y: auto;
-
-    @include parallax-background("https://img.cinemablend.com/filter:scale/quill/5/3/a/e/9/d/53ae9dfec3c10ec0d0e5fb88760bd59a5b5c4f95.jpg?mw=600");
+    z-index:1;
+    position: fixed;
+    margin-top:-50px;
+    
+    /*@include parallax-background("https://img.cinemablend.com/filter:scale/quill/5/3/a/e/9/d/53ae9dfec3c10ec0d0e5fb88760bd59a5b5c4f95.jpg?mw=600");*/
     h1{
         font-family: "Shadows Into Light", Arial, Helvetica, sans-serif;
-        font-size: 150px;
+        font-size: 300px;
         color: white;
         opacity: 0.4;
         text-align: center;
+        z-index:2;
+        margin-top:-800px;
 
 
+    }iframe{
+    width: 100%;
+    z-index: 3;
+    height: 800px;
     }
 }
 
+
 .container{
     height: $parallax-height;
+    position: relative;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: 3fr,3fr,1fr,1fr;
+    grid-template-rows:3fr 3fr 1fr 1fr;
     grid-gap: 25px;
+    z-index:2;
+    padding-top: 1000px;
+    max-height: 900px;
+    
+    
     .boxA{
         grid-area: 1/1/span 1/ span 1;
         @include grid-background("https://www.onrpg.com/wp-content/uploads/2017/07/Albion-Online-Launch.jpg") ;
